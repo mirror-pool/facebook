@@ -1,0 +1,35 @@
+{
+  "name": "mirror-pool-facebook",
+  "version": "1.0.0",
+  "description": "Facebook bot and mirror for Mirror Pool",
+  "main": "index.js",
+  "files": [
+    "lib/"
+  ],
+  "devDependencies": {
+    "coffeescript": "^1.12.7"
+  },
+  "scripts": {
+    "prepublish": "rm -rf lib/ && `npm bin`/coffee -c -o lib/ src/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bot",
+    "facebook"
+  ],
+  "author": "Philip Chung <philipchung1995@yahoo.com>",
+  "license": "MIT",
+  "dependencies": {
+    "facebook-chat-api": "^1.4.0",
+    "mirror-pool": "^1.0.0",
+    "pify": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mirror-pool/facebook.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mirror-pool/facebook/issues"
+  },
+  "homepage": "https://github.com/mirror-pool/facebook#readme"
+}
