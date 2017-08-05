@@ -1,6 +1,6 @@
 {
   "name": "mirror-pool-facebook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Facebook bot and mirror for Mirror Pool",
   "main": "index.js",
   "files": [
