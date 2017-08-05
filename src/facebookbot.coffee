@@ -48,7 +48,8 @@ class _FacebookMirror extends MirrorPool.Mirror
 	attachmentsToString: (attachments) ->
 		if attachments and attachments.length > 0
 			str = '\n\nAttachments:\n'
-			str += attachment.url + '\n' for attachment in attachments
+			str += attachment.url or attachment.previewUrl + '\n' \
+			for attachment in attachments
 			str
 		else
 			''
