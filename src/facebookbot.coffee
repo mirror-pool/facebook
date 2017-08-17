@@ -46,13 +46,18 @@ class _FacebookMirror extends MirrorPool.Mirror
 			getFallbackName()
 
 	attachmentsToString: (attachments) ->
-		if attachments and attachments.length > 0
+		validAttachments = (attachment for attachment in attachments \
+		when @getAttachmentUrl attachment)
+		if validAttachments and validAttachments.length > 0
 			str = '\n\nAttachments:\n'
-			str += attachment.url or attachment.previewUrl + '\n' \
-			for attachment in attachments
+			str += (@getAttachmentUrl attachment) + '\n' \
+			for attachment in validAttachments
 			str
 		else
 			''
+
+	getAttachmentUrl: (attachment) ->
+		attachment.url or attachment.previewUrl
 
 	sendMirrored: (message) ->
 		sendPromise = (pify @api.sendMessage) {
